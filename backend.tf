@@ -15,6 +15,7 @@ terraform {
    encrypt        = true
    kms_key_id     = "alias/terraform-bucket-key"
    dynamodb_table = "terraform-state"
+   role_arn = "arn:aws:iam::409592171686:user/terraform-user"
  }
 }
 
