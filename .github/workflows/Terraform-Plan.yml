@@ -34,6 +34,12 @@ jobs:
         #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         #     aws-region: ${{ secrets.AWS_REGION }}
 
+        - name: Configure AWS credentials from Test account
+          uses: aws-actions/configure-aws-credentials@v1
+          with:
+            role-to-assume: arn:aws:iam::409592171686:role/EC2-Admin
+            aws-region: us-east-1
+
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v1
           env:
@@ -50,7 +56,7 @@ jobs:
             pwd
             ls -la
 
-        - name: Terraform Plan
-          id: plan
-          if: github.event_name == 'push'
-          run: terraform plan -no-color
+        # - name: Terraform Plan
+        #   id: plan
+        #   if: github.event_name == 'push'
+        #   run: terraform plan -no-color
