@@ -39,6 +39,11 @@ jobs:
         - name: Terraform Init
           id: init
           run: terraform init
+
+        - name: run script task
+          run: |
+            echo pwd
+            echo ls -la
         
         - name: Terraform Plan
           id: plan
