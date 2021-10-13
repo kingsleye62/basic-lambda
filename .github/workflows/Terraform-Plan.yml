@@ -15,7 +15,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       # AWS_SDK_LOAD_CONFIG: 1
-      # GITHUB_TOKEN: ${{ secrets.TF_API_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.TF_API_TOKEN }}
 
     steps:
       - name: Checkout
@@ -27,8 +27,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-          #${{ secrets.AWS_ACCESS_KEY_SECRET }}
+          aws-region: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
