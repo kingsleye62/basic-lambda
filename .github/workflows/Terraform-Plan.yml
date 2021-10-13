@@ -58,7 +58,7 @@ jobs:
         - name: run script task
           run: |
             pwd
-            echo ${{ secrets.AWS_REGION }}
+            echo $AWS_REGION
             ls -la
 
         - name: Terraform Plan
