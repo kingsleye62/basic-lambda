@@ -1,8 +1,5 @@
 provider "aws" {
   region = var.provider_region
-  assume_role {
-    role_arn = "arn:aws:iam::409592171686:role/EC2-Admin"
-  }
 }
 
 provider "aws" {
