@@ -55,6 +55,7 @@ jobs:
         - name: run script task
           run: |
             pwd
+            echo test
             ls -la
         
         # - name: Terraform Plan
