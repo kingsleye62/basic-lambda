@@ -20,7 +20,7 @@ jobs:
   continuous-deployment-apply:
       defaults:
         run:
-          working-directory: /home/runner/work/basic-lambda/
+          working-directory: /home/runner/work/basic-lambda/basic-lambda/
       runs-on: ubuntu-latest
       needs: [terraform-apply]
       steps:
